@@ -24,5 +24,5 @@ def hello_there():
 
 	return jsonify(
 		response_type='in_channel',
-		text='<https://www.youtube.com/watch?v=42Og4uROeHg&t=11s|General |||' + user_name + '||| Kenobi!>',
+		text='<https://www.youtube.com/watch?v=42Og4uROeHg&t=11s|General |||' + str(vars(request)) + '||| Kenobi!>',
 	)
