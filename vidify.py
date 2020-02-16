@@ -7,7 +7,6 @@ app = Flask(__name__)
 def is_request_valid(request):
     is_token_valid = request.form['token'] == os.environ['SLACK_VERIFICATION_TOKEN']
     is_team_id_valid = request.form['team_id'] == os.environ['SLACK_TEAM_ID']
-
     return is_token_valid and is_team_id_valid
 
 
@@ -18,5 +17,5 @@ def hello_there():
 
     return jsonify(
         response_type='in_channel',
-        text='<https://youtu.be/frszEJb0aOo|General Kenobi!>',
+        text='<https://www.youtube.com/watch?v=42Og4uROeHg&t=11s|General ' + request.user_name + '!>',
     )
